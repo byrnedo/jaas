@@ -109,7 +109,7 @@ func makeSpec(image string, envVars *listFlag) swarm.ServiceSpec {
 				MaxAttempts: &max,
 				Condition:   swarm.RestartPolicyConditionNone,
 			},
-			ContainerSpec: swarm.ContainerSpec{
+			ContainerSpec: &swarm.ContainerSpec{
 				Image: image,
 				Env:   *envVars,
 			},
